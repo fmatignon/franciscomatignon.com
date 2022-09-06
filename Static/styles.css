@@ -1,0 +1,58 @@
+body {
+  font-family: 'Public Sans', sans-serif;
+  font-size: small ;
+  padding: 16px 12px;
+}
+
+header {
+  display: flex;
+  margin-bottom: 16px;
+  height: 17px;
+}
+nav {
+  padding-top: 2px;
+  width: 100%;
+  margin-right: 4px;
+}
+a {
+  text-decoration: none;
+  color: black;
+  opacity: 0.4;
+}
+a:hover {
+  opacity: 1;
+}
+nav a {
+  float: right;
+  margin-left: 12px;
+}
+footer {
+  margin-top: 16px;
+  height: 34px;
+  font-size: smaller;
+}
+#sets {
+  font-size: smaller;
+  min-height: calc(100vh - 17px - 34px - 64px);
+}
+#copy {
+  margin-bottom: 14px;
+}
+#btt {
+  text-align: center;
+}
+.project {
+  margin-bottom: 16px;
+}
+.project-cover {
+  width: 100%;
+}
+.project-text {
+  margin-top: 8px;
+  line-height: 1.3;
+  display: flex;
+  justify-content: space-between;
+}
+.project-text .right {
+  text-align: right;
+}
