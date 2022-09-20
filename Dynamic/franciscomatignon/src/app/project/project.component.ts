@@ -1,4 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Project } from 'src/classes/project';
+import { Route } from '@angular/router';
 
 @Component({
   selector: 'app-project',
@@ -7,7 +9,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class ProjectComponent implements OnInit {
   constructor() { }
-  @Input() project: object = {}; 
+  @Input() project: any;
   ngOnInit(): void {
   }
 }

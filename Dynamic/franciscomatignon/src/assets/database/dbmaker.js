@@ -10,7 +10,7 @@ for (let project of projects) {
   let images = fs.readdirSync(`projects/${project}/images`)
   info.images = []
   for (let image of images) {
-    info.images.push(`../../database/projects/${project}/images/${image}`)
+    info.images.push(`../../assets/database/Projects/${project}/Images/${image}`)
   }
   database.push(info)
 }

@@ -13,5 +13,6 @@ export class WorkComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  projects: Project[] = projects;
+
+  projects: any[] = projects;
 }

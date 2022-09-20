@@ -4,11 +4,10 @@ import { AboutComponent } from './about/about.component';
 import { WorkComponent } from './work/work.component';
 
 const routes: Routes = [
-  { path:'', redirectTo:'work', pathMatch: 'full'},
   { path:'work', component:WorkComponent},
   { path:'about', component:AboutComponent},
   // Wildcard route
-  { path: '**', component: WorkComponent }
+  { path: '**', redirectTo:'work', pathMatch: 'full' }
 ];
 
 @NgModule({
