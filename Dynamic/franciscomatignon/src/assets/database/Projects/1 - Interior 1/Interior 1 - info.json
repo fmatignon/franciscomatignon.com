@@ -1,0 +1,19 @@
+{
+  "name": "Interior 1",
+  "clients": [
+    {
+      "name": "Carlos Baute",
+      "link": "carlosbaute.com"
+    },
+    {
+      "name": "El Tuti Tuttini",
+      "link": ""
+    }
+  ],
+  "year": 2021,
+  "location": {
+    "city": "Cochabamba",
+    "country": "AR"
+  },
+  "text": "Lorem ipsum dolor sit amet; Angular Live Development Server is listening on localhost:4200, open your browser on"
+}

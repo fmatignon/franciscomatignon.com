@@ -5,12 +5,21 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { ProjectComponent } from './project/project.component';
+import { WorkComponent } from './work/work.component';
+import { AboutComponent } from './about/about.component';
+import { FooterComponent } from './footer/footer.component';
+
+// database global import
+
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    ProjectComponent
+    ProjectComponent,
+    WorkComponent,
+    AboutComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
