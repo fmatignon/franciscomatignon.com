@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import projects from '../../assets/database/projects.json'
 import { Project } from 'src/classes/project';
+import { DatabaseService } from '../database.service';
 
 @Component({
   selector: 'app-work',
@@ -9,10 +10,8 @@ import { Project } from 'src/classes/project';
 })
 export class WorkComponent implements OnInit {
 
-  constructor() { }
-
+  constructor(private database: DatabaseService) { }
+  projects = this.database.projects
   ngOnInit(): void {
   }
-
-  projects: any[] = projects;
 }

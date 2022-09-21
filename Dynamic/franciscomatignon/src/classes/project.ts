@@ -1,15 +1,12 @@
-export class Project {
-  "name": String;
-  "clients":{
-    "name":String;
-    "link": String
-  }[];
-  "year": Number;
-  "location":{
-    "city":String;
-    "country":String;
-  }
-  "text":String;
-  "link":String;
-  "images":String[]
+import { Client } from './Client'
+import { Loc } from './Loc'
+
+export interface Project { 
+  "name": string,
+  "clients": Client[],
+  "year": number,
+  "location": Loc,
+  "text": string,
+  "link": string,
+  "images": string[]
 }

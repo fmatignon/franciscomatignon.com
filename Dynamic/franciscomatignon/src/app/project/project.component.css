@@ -16,13 +16,13 @@ a {
   all: unset;
   cursor: pointer;
 }
-a:hover > .project-text {
+article:hover > .project-text {
   opacity: .4;
   transition-property: all;
   transition-duration: 200ms;
   transition-timing-function: ease-in-out;
 }
-a:hover > img {
+article:hover > a > img {
   filter: brightness(0.4);
   transition-property: all;
   transition-duration: 200ms;

@@ -1,8 +1,14 @@
-<a href="/{{project.link}}">
+<article>
+  <a 
+    [title]="project.name"
+    [routerLink]="['../',project.link]">
     <img src="{{project.images[0]}}" alt="" width="100%">
-    <div class="project-text">
-      <p>{{project.name}}</p>
-      <p>{{project.year}}</p>
-    </div>
-</a>
+  </a>
+  <div class="project-text">
+    <p>{{project.name}}</p>
+    <p>{{project.year}}</p>
+  </div>
+</article>
+
+
 

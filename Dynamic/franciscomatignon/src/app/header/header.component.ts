@@ -1,5 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+import { Router, ActivatedRoute, ActivatedRouteSnapshot, ParamMap, Route, UrlSegment } from '@angular/router';
+import { Location } from '@angular/common';
+import { Observable } from 'rxjs';
+import { switchMap } from 'rxjs/operators';
+
+import { DatabaseService } from '../database.service';
 
 @Component({
   selector: 'app-header',
@@ -7,9 +12,13 @@ import { Router, ActivatedRoute, ParamMap } from '@angular/router';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  constructor(private route: ActivatedRoute) { }
+  constructor(
+    private router: Router,
+    private route: ActivatedRoute,
+    private location: Location,
+    private database: DatabaseService
+  ) {  }
 
   ngOnInit(): void {
   }
-
 }

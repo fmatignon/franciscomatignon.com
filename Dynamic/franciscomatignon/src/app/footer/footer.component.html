@@ -1,1 +1,4 @@
-<p>footer works!</p>
+<footer *ngIf="router.url != '/about'">
+  <p id="copy" >ⓒ Francisco Matignon, 2022.</p>
+  <p id="btt"> <a (click)="toTop()">Back to top</a>  </p>
+</footer>

@@ -16,3 +16,11 @@ for (let project of projects) {
 }
 let dataOutput = JSON.stringify(database)
 fs.writeFileSync('projects.json', dataOutput)
+
+// make an array to find heroes easier
+let projectsArray = [];
+for (let project of database) {
+  projectsArray.push(project.link)
+}
+let projectsObject = JSON.stringify({...projectsArray})
+fs.writeFileSync('projectsArray.json', projectsObject)

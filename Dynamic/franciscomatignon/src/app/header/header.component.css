@@ -1,0 +1,28 @@
+header {
+  margin: 20px 12px 14px 12px;
+  display: flex;
+  height: 17px;
+  font-size: medium;
+}
+nav {
+  width: 100%;
+  padding-top: 2px;
+  margin-right: 4px;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+  opacity: 1;
+}
+a:hover{
+  opacity: .4;
+}
+
+nav a {
+  float: right;
+  margin-left: 12px;
+}
+.active {
+  opacity: .4;
+}

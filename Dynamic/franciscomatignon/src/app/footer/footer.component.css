@@ -1,0 +1,15 @@
+footer{
+  margin: 16px 12px 0px 12px;
+  height: 44px;
+  font-size: smaller;
+}
+#copy {
+  margin-bottom: 14px;
+}
+#btt {
+  text-align: center;
+}
+
+#btt:hover {
+  opacity: .4;
+}

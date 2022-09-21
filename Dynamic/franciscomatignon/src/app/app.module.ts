@@ -8,6 +8,7 @@ import { ProjectComponent } from './project/project.component';
 import { WorkComponent } from './work/work.component';
 import { AboutComponent } from './about/about.component';
 import { FooterComponent } from './footer/footer.component';
+import { ProjectdetailsComponent } from './projectdetails/projectdetails.component';
 
 // database global import
 
@@ -19,7 +20,8 @@ import { FooterComponent } from './footer/footer.component';
     ProjectComponent,
     WorkComponent,
     AboutComponent,
-    FooterComponent
+    FooterComponent,
+    ProjectdetailsComponent
   ],
   imports: [
     BrowserModule,
