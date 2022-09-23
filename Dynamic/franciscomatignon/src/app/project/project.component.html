@@ -1,10 +1,8 @@
 <article>
-  <a 
-    [title]="project.name"
-    [routerLink]="['../',project.link]">
-    <img src="{{project.images[0]}}" alt="" width="100%">
-  </a>
-  <div class="project-text">
+  <img
+    [routerLink]="['../',project.link]"
+    src="{{project.images[0]}}" width="100%">
+  <div>
     <p>{{project.name}}</p>
     <p>{{project.year}}</p>
   </div>

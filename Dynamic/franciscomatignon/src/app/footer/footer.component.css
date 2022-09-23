@@ -1,15 +1,24 @@
 footer{
   margin: 16px 12px 0px 12px;
-  height: 44px;
+  height: 46px;
   font-size: smaller;
 }
-#copy {
-  margin-bottom: 14px;
+p:first-child {
+  margin-bottom: 12px;
 }
-#btt {
+p:last-child {
   text-align: center;
 }
 
-#btt:hover {
-  opacity: .4;
+/* Tablet*/
+@media (min-width: 768px){
+	footer {
+    margin-right: 16px;
+    margin-left: 16px;
+    font-size: medium;
+    height:72px;
+  }
+  p:first-child {
+    margin-bottom: 16px;
+  }
 }

@@ -1,2 +1,26 @@
-<a onclick="makeProjectsList()">{{activeProject.name}}</a>
-<a onclick="makeProjectsList()">{{activeProject.year}}</a>
+<article>
+  <div id="main-textbox">
+    <div id="project-textbox">
+      <div class="text-box">
+        <p>{{activeProject.name}}</p>
+        <p>
+          <span *ngFor="let client of activeProject.clients; index as i">
+            <a *ngIf="activeProject.clients[i].link; else noLink" href="https://{{activeProject.clients[i].link}}">
+              {{activeProject.clients[i].name}}
+            </a>
+            <span *ngIf="activeProject.clients.length >1 && i != activeProject.clients.length - 1"> / </span>
+            <ng-template #noLink>{{activeProject.clients[i].name}}</ng-template>
+          </span>
+        </p>
+      </div>
+      <div class="text-box">
+        <p>{{activeProject.year}}</p>
+        <p>{{activeProject.location.city}}, {{activeProject.location.country}}</p>
+      </div>
+    </div>
+    <p *ngIf="activeProject.text" id="project-description">
+      {{activeProject.text}}
+    </p>
+  </div>
+  <img *ngFor="let image of activeProject.images; index as i" src="{{activeProject.images[i]}}" width="100%">
+</article>

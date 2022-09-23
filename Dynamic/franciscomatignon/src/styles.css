@@ -60,11 +60,14 @@ body {
 
 body {
   font-family: 'Public Sans', sans-serif;
-  font-size: small ;
+  font-size: small;
+	line-height: 1.25;
+	text-align: justify;
+  text-justify: inter-word;
 }
 main {
   margin: 0px 12px;
-  min-height: calc(100vh - 3px - 44px - 64px);
+  min-height: calc(100vh - 3px - 72px - 64px);
 }
 a {
 	all: unset;
@@ -73,3 +76,22 @@ a {
 a:hover {
 	opacity: .4;
 }
+
+:hover {
+	transition: all;
+	transition-duration: 200ms;
+	transition-timing-function: ease-in-out;
+}
+
+
+/* Tablet*/
+@media (min-width: 768px){
+	body {
+		font-size: medium;
+	}
+	main {
+		margin: 0px 16px;
+		min-height: calc(100vh - 3px - 89px - 90px);
+	}
+}
+
