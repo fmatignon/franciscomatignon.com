@@ -3,10 +3,10 @@ footer{
   height: 46px;
   font-size: smaller;
 }
-p:first-child {
+#copy {
   margin-bottom: 12px;
 }
-p:last-child {
+#btt {
   text-align: center;
 }
 

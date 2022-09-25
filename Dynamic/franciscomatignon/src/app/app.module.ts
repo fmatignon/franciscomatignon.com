@@ -9,6 +9,7 @@ import { WorkComponent } from './work/work.component';
 import { AboutComponent } from './about/about.component';
 import { FooterComponent } from './footer/footer.component';
 import { ProjectdetailsComponent } from './projectdetails/projectdetails.component';
+import { NgOptimizedImage } from '@angular/common';
 
 // database global import
 
@@ -25,7 +26,8 @@ import { ProjectdetailsComponent } from './projectdetails/projectdetails.compone
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgOptimizedImage
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -15,10 +15,106 @@ p:first-child {
 }
 img {
   margin-bottom: 8px;
+  cursor: pointer;
 }
 img:last-child {
   margin-bottom: 0px;
 }
 #project-description {
   opacity: .6;
+}
+
+/* Tablet*/
+@media (min-width: 768px){
+  .mobile-tablet {
+    height: calc(100vh - 80px - 90px);
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 14px;
+    overflow: hidden;
+  }
+  .tablet-container {
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  img {
+    max-height: 100%;
+    width: auto;
+    object-fit: contain;
+    max-width: 90%;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  #project-description {
+    margin-bottom: 32px;
+  }
+  
+  .change-image {
+    display: flex;
+    justify-content: center;
+    width: 32px;
+  }
+  .change-image:hover {
+    opacity: .2;
+    cursor: pointer;
+  }
+  object {
+    width: 24px;
+    opacity: .4;
+    pointer-events: none;
+  }
+  object:hover {
+    opacity: 1;
+  }
+}
+
+/* Desktop */
+@media (min-width: 1200px){
+  .desktop {
+    height: calc(100vh - 82px - 90px);
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-column-gap: 24px;
+    padding-bottom: 16px;
+  }
+  #main-textbox {
+    grid-column: 1;
+    display: block;
+    text-align: right;
+    align-self: flex-end;
+    margin: 0;
+    position: relative;
+  }
+  #project-textbox {
+    display: block;
+  }
+  p:first-child {
+    font-size: large;
+  }
+  #project-description {
+    margin: 0;
+  }
+
+  .desktop-container {
+    display: flex;
+    justify-content: space-between;
+    grid-column: 2 / span 3;
+    margin: 0;
+    overflow: hidden;
+    position: relative;
+  }
+  img {
+    max-height: 100%;
+    margin: 0;
+    align-self: flex-end;
+  }
+  #previous-image {
+    position:absolute;
+    right: -20px;
+    bottom: 0px;
+    height: calc(100vh - 82px - 90px);
+    width: 80px;
+  }
 }

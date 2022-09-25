@@ -1,6 +1,51 @@
 #about {
   font-size: medium;
+  padding-top: 40px;
 }
 img {
-  margin: 40px 0px 16px 0px;
+  margin-bottom: 16px;
+  width: 164px;
+}
+
+/* Tablet*/
+@media (min-width: 768px){
+ #about {
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  grid-column-gap: 20px;
+  padding-top: 120px;
+  }
+  #about-text {
+    grid-column: 2;
+    width: 380px;
+    margin: 0;
+  }
+  img {
+    grid-column: 1;
+    width: 240px;
+    height: 240px;
+    justify-self: end;
+    margin: 0;
+  }
+}
+
+/* Desktop*/
+@media (min-width: 1200px){
+ #about {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  grid-column-gap: 16px;
+  padding-top: 120px;
+  }
+  #about-text {
+    grid-column: 2;
+    margin: 0;
+  }
+  img {
+    grid-column: 1;
+    width: 240px;
+    height: 240px;
+    justify-self: end;
+    margin: 0;
+  }
 }

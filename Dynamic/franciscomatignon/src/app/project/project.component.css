@@ -5,6 +5,8 @@ app-project {
 }
 img {
   margin-bottom: 8px;
+  aspect-ratio: 4/5;
+  object-fit: cover;
 }
 div {
   display: flex;
@@ -19,4 +21,24 @@ article:hover > div {
 }
 article:hover > img {
   filter: brightness(0.4);
+}
+
+/* Tablet*/
+@media (min-width: 768px){
+  img {
+    aspect-ratio: 1;
+  }
+  div {
+    margin-bottom: 18px;
+  }
+}
+
+/* Desktop*/
+@media (min-width: 1200px){
+  img {
+    aspect-ratio: 3/4;
+  }
+  div {
+    margin-bottom: 20px;
+  }
 }

@@ -1,8 +1,17 @@
-#projects-wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+/* Tablet*/
+@media (min-width: 768px){
+  #projects-wrapper {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-column-gap: 16px;
+  }
 }
-.project {
-  width: 49%;
+
+/* Desktop*/
+@media (min-width: 1200px){
+  #projects-wrapper {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-column-gap: 16px;
+  }
 }
