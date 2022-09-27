@@ -23,6 +23,9 @@ img:last-child {
 #project-description {
   opacity: .6;
 }
+.non-clickable {
+  cursor: default;
+}
 
 /* Tablet*/
 @media (min-width: 768px){
@@ -31,21 +34,21 @@ img:last-child {
     display: flex;
     flex-direction: column;
     padding-bottom: 14px;
-    overflow: hidden;
   }
   .tablet-container {
     height: 100%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    overflow: hidden;
   }
   img {
     max-height: 100%;
     width: auto;
-    object-fit: contain;
     max-width: 90%;
     margin-right: auto;
     margin-left: auto;
+    object-fit: contain;
   }
   #project-description {
     margin-bottom: 32px;
@@ -106,9 +109,12 @@ img:last-child {
     position: relative;
   }
   img {
-    max-height: 100%;
+    max-height: auto;
+    max-width: auto;
+    object-fit: fill;
     margin: 0;
     align-self: flex-end;
+    background-color: aqua;
   }
   #previous-image {
     position:absolute;

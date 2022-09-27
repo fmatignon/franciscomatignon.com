@@ -1,3 +1,16 @@
+footer{
+  margin: 16px 12px 0px 12px;
+  height: 46px;
+  font-size: smaller;
+}
+#copy {
+  margin-bottom: 12px;
+}
+#btt {
+  text-align: center;
+}
+
+
 /* Tablet*/
 @media (min-width: 768px){
   #projects-wrapper {

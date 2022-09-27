@@ -68,4 +68,10 @@ export class ProjectdetailsComponent implements OnInit {
       console.log(project)
     }
   }
+  toTop() {
+    window.scroll({ 
+      top: 0, 
+      left: 0, 
+      behavior: 'smooth' 
+    })}
 }
