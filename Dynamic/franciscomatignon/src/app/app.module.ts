@@ -10,6 +10,7 @@ import { AboutComponent } from './about/about.component';
 import { FooterComponent } from './footer/footer.component';
 import { ProjectdetailsComponent } from './projectdetails/projectdetails.component';
 import { NgOptimizedImage } from '@angular/common';
+import { NoPageComponent } from './no-page/no-page.component';
 
 // database global import
 
@@ -22,7 +23,8 @@ import { NgOptimizedImage } from '@angular/common';
     WorkComponent,
     AboutComponent,
     FooterComponent,
-    ProjectdetailsComponent
+    ProjectdetailsComponent,
+    NoPageComponent
   ],
   imports: [
     BrowserModule,

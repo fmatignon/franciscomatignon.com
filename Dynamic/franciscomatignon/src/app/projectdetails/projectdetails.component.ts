@@ -34,7 +34,7 @@ export class ProjectdetailsComponent implements OnInit {
     this.activeProject = this.database.projects[this.activeProjectLinkId]
     console.log(this.activeProjectLinkId)
     if (this.activeProjectLinkId == 0) {
-      this.router.navigateByUrl('/about')
+      this.router.navigateByUrl('404')
     }
     this.title.setTitle(`Francisco Matignon - ${this.activeProject.name}`)
     if (window.screen.width >= 1200) {
@@ -49,9 +49,25 @@ export class ProjectdetailsComponent implements OnInit {
   }
   activeImage = this.activeProject.images[0]
   imageCounter: number = 0
+  lastProject:boolean = this.activeProjectLinkId == this.database.projects.length - 1
+  firstProject: boolean = this.activeProjectLinkId == 1
+  checkFirstandLast() {
+  this.lastProject = this.activeProjectLinkId == this.database.projects.length - 1
+  this.firstProject = this.activeProjectLinkId == 1
+  }
   nextImage() {
     if (this.imageCounter == this.activeProject.images.length - 1) {
-      this.router.navigateByUrl('/work')
+      if (this.activeProjectLinkId < this.database.projects.length - 1) {
+        console.log(this.activeProjectLinkId, this.database.projects.length)
+        this.router.navigateByUrl(`/${this.database.projects[this.activeProjectLinkId+1].link}`)
+        this.activeProjectLinkId +=1
+        this.activeProject = this.database.projects[this.activeProjectLinkId]
+        this.checkFirstandLast()
+        this.imageCounter = 0
+      }
+      else {
+        this.lastProject= true;
+      }
     }
     else {
       this.imageCounter +=1
@@ -60,7 +76,17 @@ export class ProjectdetailsComponent implements OnInit {
   }
   previousImage() {
     if (this.imageCounter == 0) {
-      this.router.navigateByUrl('/work')
+      if (this.activeProjectLinkId > 1) {
+        this.router.navigateByUrl(`/${this.database.projects[this.activeProjectLinkId-1].link}`)
+        this.activeProjectLinkId -= 1
+        this.activeProject = this.database.projects[this.activeProjectLinkId]
+        this.checkFirstandLast()
+        this.imageCounter = 0
+      }
+      else {
+        this.firstProject == true
+      }
+      
     }
     else {
       this.imageCounter -=1

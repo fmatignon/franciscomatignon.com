@@ -1,14 +1,19 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AboutComponent } from './about/about.component';
+import { NoPageComponent } from './no-page/no-page.component';
 import { ProjectdetailsComponent } from './projectdetails/projectdetails.component';
 import { WorkComponent } from './work/work.component';
 
 const routes: Routes = [
-  { path:'', title:'Francisco Matignon - Work', component:WorkComponent},
+  { path:'', redirectTo: '/work', pathMatch:'full'},
   { path:'work', title:'Francisco Matignon - Work', component:WorkComponent},
+  { path:'work/:*', redirectTo:'/404', pathMatch:'full'},
   { path:'about', title:'Francisco Matignon - About', component:AboutComponent},
+  { path:'404', title:'404 not found', component:NoPageComponent},
   { path:':project', title:':project', component:ProjectdetailsComponent},
+  { path:':*/:*', redirectTo:'/404', pathMatch:'full'},
+  { path:':*/:*/:*', redirectTo:'/404', pathMatch:'full'},
 ];
 
 @NgModule({

@@ -32,6 +32,9 @@ img:last-child {
   justify-content: space-between;
   margin-top: 12px;
 }
+.hidden {
+  visibility: hidden;
+}
 /* Tablet*/
 @media (min-width: 768px){
   .mobile-tablet {
@@ -119,6 +122,10 @@ img:last-child {
     margin: 0;
     overflow: hidden;
     position: relative;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
   }
   img {
     max-height: auto;
@@ -133,6 +140,10 @@ img:last-child {
     bottom: 0px;
     height: calc(100vh - 76px - 90px);
     width: 80px;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
   }
   #previous-next-project {
     display: grid;

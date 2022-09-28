@@ -1,3 +1,3 @@
 <div id="projects-wrapper">
-  <app-project [project]="project" *ngFor="let project of projects" class="project"></app-project>
+  <app-project [project]="project" *ngFor="let project of projects | slice:1" class="project"></app-project>
 </div>
