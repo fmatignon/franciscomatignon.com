@@ -56,13 +56,13 @@
     <p *ngIf="activeProject.text" id="project-description">
       {{activeProject.text}}
     </p>
-        <div id="previous-image" *ngIf="activeProject.images.length > 1" class="change-image" (click)="previousImage()">
+        <div [ngClass]="{'full-opacity-2': this.imageCounter == 0 }" id="previous-image" *ngIf="activeProject.images.length > 1" class="change-image" (click)="previousImage()">
       <object data="../../assets/angle-left.svg" ></object>
     </div>
   </div>
   <div class="desktop-container" *ngIf="desktop">
-    <img  src="{{activeImage}}" (click)="nextImage()" width="100%">
-    <div class="change-image" *ngIf="activeProject.images.length > 1" (click)="nextImage()">
+    <img src="{{activeImage}}" (click)="nextImage()" width="100%">
+    <div [ngClass]="{'full-opacity': this.imageCounter == this.activeProject.images.length - 1 }" class="change-image" *ngIf="activeProject.images.length > 1" (click)="nextImage()">
       <object data="../../assets/angle-right.svg" ></object>
     </div>
   </div>

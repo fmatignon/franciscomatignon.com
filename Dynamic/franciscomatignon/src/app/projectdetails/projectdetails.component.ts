@@ -28,10 +28,14 @@ export class ProjectdetailsComponent implements OnInit {
   tablet: boolean = false
   desktop: boolean = false
   activeProjectLink: any = this.route.snapshot.paramMap.get('project')
-  activeProject: any = this.database.getProjectByLink(this.activeProjectLink)
-  activeImage = this.activeProject.images[0]
+  activeProjectLinkId: number = this.database.getProjectIdByLink(this.activeProjectLink)
+  activeProject: any = this.database.projects[this.activeProjectLinkId]
   ngOnInit(): void {
-    this.activeProject = this.database.getProjectByLink(this.activeProjectLink)
+    this.activeProject = this.database.projects[this.activeProjectLinkId]
+    console.log(this.activeProjectLinkId)
+    if (this.activeProjectLinkId == 0) {
+      this.router.navigateByUrl('/about')
+    }
     this.title.setTitle(`Francisco Matignon - ${this.activeProject.name}`)
     if (window.screen.width >= 1200) {
       this.desktop = true
@@ -43,10 +47,11 @@ export class ProjectdetailsComponent implements OnInit {
       this.mobile = true
     }
   }
+  activeImage = this.activeProject.images[0]
   imageCounter: number = 0
   nextImage() {
     if (this.imageCounter == this.activeProject.images.length - 1) {
-      this.imageCounter = 0;
+      this.router.navigateByUrl('/work')
     }
     else {
       this.imageCounter +=1
@@ -55,7 +60,7 @@ export class ProjectdetailsComponent implements OnInit {
   }
   previousImage() {
     if (this.imageCounter == 0) {
-      this.imageCounter = this.activeProject.images.length - 1;
+      this.router.navigateByUrl('/work')
     }
     else {
       this.imageCounter -=1

@@ -3,6 +3,7 @@
 }
 #project-textbox {
   display: flex;
+  align-items: flex-end;
   justify-content: space-between;
   margin-bottom: 8px;
 }
@@ -26,7 +27,11 @@ img:last-child {
 .non-clickable {
   cursor: default;
 }
-
+#previous-next-project {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 12px;
+}
 /* Tablet*/
 @media (min-width: 768px){
   .mobile-tablet {
@@ -58,6 +63,7 @@ img:last-child {
     display: flex;
     justify-content: center;
     width: 32px;
+    opacity: .4;
   }
   .change-image:hover {
     opacity: .2;
@@ -65,22 +71,28 @@ img:last-child {
   }
   object {
     width: 24px;
-    opacity: .4;
     pointer-events: none;
   }
-  object:hover {
+  .full-opacity {
     opacity: 1;
+  }
+  .full-opacity-2 {
+    opacity: 1;
+  }
+  .full-opacity:hover, .full-opacity-2:hover {
+    opacity: 1;
+    background-color: rgba(0,0,0,.065) ;
   }
 }
 
 /* Desktop */
 @media (min-width: 1200px){
   .desktop {
-    height: calc(100vh - 82px - 90px);
+    height: calc(100vh - 76px - 90px);
     display: grid;
     grid-template-columns: repeat(3,1fr);
     grid-column-gap: 24px;
-    padding-bottom: 16px;
+    padding-bottom: 10px;
   }
   #main-textbox {
     grid-column: 1;
@@ -114,13 +126,26 @@ img:last-child {
     object-fit: fill;
     margin: 0;
     align-self: flex-end;
-    background-color: aqua;
   }
   #previous-image {
     position:absolute;
     right: -20px;
     bottom: 0px;
-    height: calc(100vh - 82px - 90px);
+    height: calc(100vh - 76px - 90px);
     width: 80px;
+  }
+  #previous-next-project {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    height: 16px;
+    align-self: flex-end;
+  }
+  #previous-next-project div {
+    display: flex;
+    justify-content: space-between;
+    grid-column: 2 / span 2;
+  }
+  .full-opacity {
+    opacity: 1;
   }
 }

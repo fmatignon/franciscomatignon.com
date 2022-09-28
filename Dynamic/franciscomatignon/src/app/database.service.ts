@@ -20,4 +20,16 @@ export class DatabaseService {
     }
     return null
   }
+  getProjectIdByLink(link: any){
+    let counter = 0;
+    for (let project of this.projects) {
+      if (project.link == link) {
+        return counter
+      }
+      else {
+        counter +=1
+      }
+    }
+    return 0
+  }
 }
