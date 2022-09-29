@@ -13,11 +13,11 @@ const routes: Routes = [
   { path:'404', title:'404 not found', component:NoPageComponent},
   { path:':project', title:':project', component:ProjectdetailsComponent},
   { path:':*/:*', redirectTo:'/404', pathMatch:'full'},
-  { path:':*/:*/:*', redirectTo:'/404', pathMatch:'full'},
+  { path:':*:/:*', redirectTo:'/404', pathMatch:'full'},
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [ RouterModule.forRoot(routes,{onSameUrlNavigation: 'reload'})],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

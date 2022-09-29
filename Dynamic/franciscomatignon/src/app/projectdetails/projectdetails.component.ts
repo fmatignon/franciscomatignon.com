@@ -4,6 +4,7 @@ import { Location, PlatformLocation } from '@angular/common';
 import { DatabaseService } from '../database.service';
 import { Title } from '@angular/platform-browser';
 import { NgOptimizedImage } from '@angular/common';
+import { fromEvent, Observable, Subscription } from "rxjs";
 
 import { Project } from 'src/classes/project';
 
@@ -22,31 +23,55 @@ export class ProjectdetailsComponent implements OnInit {
     private Location: Location,
     private database: DatabaseService,
     private title: Title
-    ) {  }
-
+    ) {      }
   mobile: boolean = false
   tablet: boolean = false
   desktop: boolean = false
   activeProjectLink: any = this.route.snapshot.paramMap.get('project')
   activeProjectLinkId: number = this.database.getProjectIdByLink(this.activeProjectLink)
   activeProject: any = this.database.projects[this.activeProjectLinkId]
+
+  resizeObservable$: Observable<Event>
+resizeSubscription$: Subscription
   ngOnInit(): void {
+    this.resizeObservable$ = fromEvent(window, 'resize')
+    this.resizeSubscription$ = this.resizeObservable$.subscribe( evt => {
+      if (window.innerWidth >= 1200) {
+        this.desktop = true
+        this.tablet = false
+        this.mobile = false
+      }
+      else if (window.innerWidth >= 768 ) {
+        this.desktop = false
+        this.tablet = true
+        this.mobile = false
+      }
+      else {
+        this.desktop = false
+        this.tablet = false
+        this.mobile = true
+      }
+    })
+
     this.activeProject = this.database.projects[this.activeProjectLinkId]
-    console.log(this.activeProjectLinkId)
     if (this.activeProjectLinkId == 0) {
       this.router.navigateByUrl('404')
     }
     this.title.setTitle(`Francisco Matignon - ${this.activeProject.name}`)
-    if (window.screen.width >= 1200) {
+    if (window.innerWidth >= 1200) {
       this.desktop = true
     }
-    else if (window.screen.width >= 768 ) {
+    else if (window.innerWidth >= 768 ) {
       this.tablet = true
     }
     else {
       this.mobile = true
     }
   }
+  ngOnDestroy() {
+    this.resizeSubscription$.unsubscribe()
+}
+
   activeImage = this.activeProject.images[0]
   imageCounter: number = 0
   lastProject:boolean = this.activeProjectLinkId == this.database.projects.length - 1
@@ -58,7 +83,6 @@ export class ProjectdetailsComponent implements OnInit {
   nextImage() {
     if (this.imageCounter == this.activeProject.images.length - 1) {
       if (this.activeProjectLinkId < this.database.projects.length - 1) {
-        console.log(this.activeProjectLinkId, this.database.projects.length)
         this.router.navigateByUrl(`/${this.database.projects[this.activeProjectLinkId+1].link}`)
         this.activeProjectLinkId +=1
         this.activeProject = this.database.projects[this.activeProjectLinkId]

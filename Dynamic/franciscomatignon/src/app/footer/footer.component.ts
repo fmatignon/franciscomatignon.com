@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { fromEvent, Observable, Subscription } from "rxjs";
 
 @Component({
   selector: 'app-footer',
@@ -12,11 +13,34 @@ export class FooterComponent implements OnInit {
   mobile: boolean = false
   tablet: boolean = false
   desktop: boolean = false
+
+  resizeObservable$: Observable<Event>
+  resizeSubscription$: Subscription
   ngOnInit(): void {
-    if (window.screen.width >= 1200) {
+    this.resizeObservable$ = fromEvent(window, 'resize')
+    this.resizeSubscription$ = this.resizeObservable$.subscribe( evt => {
+      if (window.innerWidth >= 1200) {
+        this.desktop = true
+        this.tablet = false
+        this.mobile = false
+      }
+      else if (window.innerWidth >= 768 ) {
+        this.desktop = false
+        this.tablet = true
+        this.mobile = false
+      }
+      else {
+        this.desktop = false
+        this.tablet = false
+        this.mobile = true
+      }
+    })
+
+
+    if (window.innerWidth >= 1200) {
       this.desktop = true
     }
-    else if (window.screen.width >= 768 ) {
+    else if (window.innerWidth >= 768 ) {
       this.tablet = true
     }
     else {

@@ -26,17 +26,19 @@
     <img *ngFor="let image of activeProject.images; index as i" src="{{activeProject.images[i]}}" width="100%">
   </div>
   <div class="tablet-container" *ngIf="tablet">
-    <div *ngIf="activeProject.images.length > 1" class="change-image" (click)="previousImage()">
+    <div class="change-image" [ngClass]="{'full-opacity': !firstProject && this.imageCounter == 0, 'hidden': firstProject && this.imageCounter == 0}" (click)="previousImage()">
       <object data="../../assets/angle-left.svg" ></object>
     </div>
     <img src="{{activeImage}}" (click)="nextImage()" width="100%">
-    <div class="change-image" *ngIf="activeProject.images.length > 1" (click)="nextImage()">
+    <div [ngClass]="{'full-opacity': !lastProject && this.imageCounter == this.activeProject.images.length - 1, 'hidden': lastProject && this.imageCounter == this.activeProject.images.length - 1}" class="change-image" (click)="nextImage()">
       <object data="../../assets/angle-right.svg" ></object>
     </div>
   </div>
+  <p id="tabletcounter" *ngIf="tablet">{{imageCounter + 1}} / {{this.activeProject.images.length}}</p>
 </article>
 <article class="desktop" *ngIf="desktop">
   <div id="main-textbox">
+    <p id="counter" >{{imageCounter + 1}} / {{this.activeProject.images.length}}</p>
     <div id="project-textbox">
       <div class="text-box">
         <p>{{activeProject.name}}</p>
@@ -56,7 +58,7 @@
     <p *ngIf="activeProject.text" id="project-description">
       {{activeProject.text}}
     </p>
-        <div [ngClass]="{'full-opacity-2': !firstProject && this.imageCounter == 0, 'hidden': firstProject && this.imageCounter == 0}" id="previous-image" class="change-image" (click)="previousImage()">
+        <div [ngClass]="{'full-opacity': !firstProject && this.imageCounter == 0, 'hidden': firstProject && this.imageCounter == 0}" id="previous-image" class="change-image" (click)="previousImage()">
       <object data="../../assets/angle-left.svg" ></object>
     </div>
   </div>

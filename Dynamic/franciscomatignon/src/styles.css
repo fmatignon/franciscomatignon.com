@@ -97,5 +97,8 @@ a:hover {
 
 /* Desktop*/
 @media (min-width: 768px){
+	main {
+		min-height: calc(100vh - 3px - 63px - 90px);
+	}
 }
 
