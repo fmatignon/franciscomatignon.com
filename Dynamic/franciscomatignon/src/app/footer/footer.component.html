@@ -1,4 +1,4 @@
 <footer *ngIf="(router.url != '/about')">
-  <p [ngClass]="{'center':tablet && router.url != ('/work' || ''), 'second-column': router.url!= ('/work' || '')}" id="copy">ⓒ Francisco Matignon, 2022.</p>
   <p id="btt" [ngClass]="{'margin-top':desktop}" *ngIf="(mobile || ((router.url == '/work' || ''))) && (router.url != '/404')"> <a (click)="toTop()">Back to top</a>  </p>
+  <p [ngClass]="{'center':tablet && router.url != ('/work' || ''), 'second-column': router.url!= ('/work' || '')}" id="copy">ⓒ A - rendering studio, 2023.</p>
 </footer>

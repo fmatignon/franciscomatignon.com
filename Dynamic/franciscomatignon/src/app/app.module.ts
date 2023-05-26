@@ -12,6 +12,10 @@ import { ProjectdetailsComponent } from './projectdetails/projectdetails.compone
 import { NgOptimizedImage } from '@angular/common';
 import { NoPageComponent } from './no-page/no-page.component';
 
+import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
+import { faInstagram, faInstagramSquare} from '@fortawesome/free-brands-svg-icons'
+
+import * from '@ng-bootstrap'
 // database global import
 
 
@@ -29,9 +33,16 @@ import { NoPageComponent } from './no-page/no-page.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgOptimizedImage
+    NgOptimizedImage,
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+  constructor(library: FaIconLibrary) {
+    library.addIcons(
+    faInstagram,
+    faInstagramSquare)   
+  }
+}

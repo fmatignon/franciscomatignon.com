@@ -7,11 +7,11 @@ import { WorkComponent } from './work/work.component';
 
 const routes: Routes = [
   { path:'', redirectTo: '/work', pathMatch:'full'},
-  { path:'work', title:'Francisco Matignon - Work', component:WorkComponent},
+  { path:'work', title:'A - rendering studio', component:WorkComponent},
   { path:'work/:*', redirectTo:'/404', pathMatch:'full'},
   { path:'about', title:'Francisco Matignon - About', component:AboutComponent},
   { path:'404', title:'404 not found', component:NoPageComponent},
-  { path:':project', title:':project', component:ProjectdetailsComponent},
+  { path:':project', component:ProjectdetailsComponent},
   { path:':*/:*', redirectTo:'/404', pathMatch:'full'},
   { path:':*:/:*', redirectTo:'/404', pathMatch:'full'},
 ];

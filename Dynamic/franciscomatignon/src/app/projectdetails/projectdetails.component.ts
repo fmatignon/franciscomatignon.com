@@ -21,7 +21,7 @@ export class ProjectdetailsComponent implements OnInit {
     private route: ActivatedRoute,
     private router: Router,
     private Location: Location,
-    private database: DatabaseService,
+    public database: DatabaseService,
     private title: Title
     ) {      }
   mobile: boolean = false
@@ -32,7 +32,7 @@ export class ProjectdetailsComponent implements OnInit {
   activeProject: any = this.database.projects[this.activeProjectLinkId]
 
   resizeObservable$: Observable<Event>
-resizeSubscription$: Subscription
+  resizeSubscription$: Subscription
   ngOnInit(): void {
     this.resizeObservable$ = fromEvent(window, 'resize')
     this.resizeSubscription$ = this.resizeObservable$.subscribe( evt => {
@@ -83,11 +83,7 @@ resizeSubscription$: Subscription
   nextImage() {
     if (this.imageCounter == this.activeProject.images.length - 1) {
       if (this.activeProjectLinkId < this.database.projects.length - 1) {
-        this.router.navigateByUrl(`/${this.database.projects[this.activeProjectLinkId+1].link}`)
-        this.activeProjectLinkId +=1
-        this.activeProject = this.database.projects[this.activeProjectLinkId]
-        this.checkFirstandLast()
-        this.imageCounter = 0
+        this.nextProject()
       }
       else {
         this.lastProject= true;
@@ -98,14 +94,18 @@ resizeSubscription$: Subscription
     }
     this.activeImage = this.activeProject.images[this.imageCounter]
   }
-  previousImage() {
-    if (this.imageCounter == 0) {
-      if (this.activeProjectLinkId > 1) {
-        this.router.navigateByUrl(`/${this.database.projects[this.activeProjectLinkId-1].link}`)
-        this.activeProjectLinkId -= 1
+  nextProject() {
+    this.activeProjectLinkId +=1
+        this.router.navigateByUrl(`/${this.database.projects[this.activeProjectLinkId].link}`)
         this.activeProject = this.database.projects[this.activeProjectLinkId]
         this.checkFirstandLast()
         this.imageCounter = 0
+        this.title.setTitle(`Francisco Matignon - ${this.activeProject.name}`)
+  }
+  previousImage() {
+    if (this.imageCounter == 0) {
+      if (this.activeProjectLinkId > 1) {
+        this.previousProject()
       }
       else {
         this.firstProject == true
@@ -116,6 +116,14 @@ resizeSubscription$: Subscription
       this.imageCounter -=1
     }
     this.activeImage = this.activeProject.images[this.imageCounter]
+  }
+  previousProject() {
+    this.activeProjectLinkId -= 1
+    this.router.navigateByUrl(`/${this.database.projects[this.activeProjectLinkId].link}`)
+    this.activeProject = this.database.projects[this.activeProjectLinkId]
+    this.checkFirstandLast()
+    this.imageCounter = 0
+    this.title.setTitle(`Francisco Matignon - ${this.activeProject.name}`)
   }
   projectsArray = [];
   makeProjectsList(): void {

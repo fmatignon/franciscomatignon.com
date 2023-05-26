@@ -1,39 +1,58 @@
 header {
-  margin: 20px 12px 14px 12px;
-  display: flex;
-  height: 17px;
+  position: relative;
+  margin: 20px 12px 10px 12px;
+  height: 20px;
   font-size: medium;
-  align-items: flex-end;
+  align-items: flex-start;
 }
 
 nav {
-  width: 100%;
-  padding-top: 2px;
+  float: right;
+  display: block;
 }
 nav a {
-  float: right;
   margin-left: 12px;
+  justify-self: right;
 }
 .active {
   opacity: .4;
 }
 object {
-  width: 42px;
+  position: absolute;
+  top: -20px;
+  width: 80px;
   pointer-events: none;
 }
 .non-clickable {
   pointer-events: none;
 }
-
+fa-icon {
+  margin-left: 24px;
+}
 /* Tablet*/
 @media (min-width: 768px){
 	header {
     font-size: large;
     height: 34px;
-    margin-right: 16px;
     margin-left: 16px;
+    margin-right: 32px;
   }
   object {
-    width: 64px;
+    width: 120px;
+  }
+  nav a {
+    margin-left: 16px;
+  }
+  fa-icon {
+    margin-left: 32px;
+  }
+  nav a {
+    margin-left: 16px;
+  }
+  fa-icon {
+    margin-left: 32px;
+  }
+  header {
+    margin-bottom: 0px;
   }
 }

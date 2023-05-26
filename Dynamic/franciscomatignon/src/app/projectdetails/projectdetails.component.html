@@ -25,6 +25,10 @@
   <div *ngIf="mobile">
     <img *ngFor="let image of activeProject.images; index as i" src="{{activeProject.images[i]}}" width="100%">
   </div>
+  <div *ngIf="mobile" id="previous-next-project">
+    <a [ngClass]="{'hidden': firstProject}" (click)="this.previousProject()">Previous</a>
+    <a [ngClass]="{'hidden': lastProject}" (click)="this.nextProject()">Next</a>
+  </div>
   <div class="tablet-container" *ngIf="tablet">
     <div class="change-image" [ngClass]="{'full-opacity': !firstProject && this.imageCounter == 0, 'hidden': firstProject && this.imageCounter == 0}" (click)="previousImage()">
       <object data="../../assets/angle-left.svg" ></object>
