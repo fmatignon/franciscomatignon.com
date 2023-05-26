@@ -4,6 +4,8 @@ import { Project } from 'src/classes/project';
 import { DatabaseService } from '../database.service';
 import { fromEvent, Observable, Subscription } from "rxjs";
 
+import { NgbCarousel, NgbCarouselConfig, NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
+
 @Component({
   selector: 'app-work',
   templateUrl: './work.component.html',
@@ -20,17 +22,30 @@ export class WorkComponent implements OnInit {
   resizeObservable$: Observable<Event>
   resizeSubscription$: Subscription
 
-  coverCounter = 1
-  coverImage: string = `../../assets/Covers/Mobile/${this.coverCounter}.jpg`;
-  changeCoverImage() {
-    setTimeout(() => {}, 500)
-    this.coverCounter = 0
-  }
+
+  showNavigationArrows = false;
+  showNavigationIndicators = false;
+  animation = false
 
   constructor(private database: DatabaseService) { }
   projects = this.database.projects
   ngOnInit(): void {
-        this.resizeObservable$ = fromEvent(window, 'resize')
+    if (window.innerWidth >= 1200) {
+      this.desktop = true
+      this.tablet = false
+      this.mobile = false
+    }
+    else if (window.innerWidth >= 768 ) {
+      this.desktop = false
+      this.tablet = true
+      this.mobile = false
+    }
+    else {
+      this.desktop = false
+      this.tablet = false
+      this.mobile = true
+    }
+    this.resizeObservable$ = fromEvent(window, 'resize')
     this.resizeSubscription$ = this.resizeObservable$.subscribe( evt => {
       if (window.innerWidth >= 1200) {
         this.desktop = true
@@ -48,7 +63,5 @@ export class WorkComponent implements OnInit {
         this.mobile = true
       }
     })
-
-    setInterval(this.changeCoverImage,500)
   }
 }

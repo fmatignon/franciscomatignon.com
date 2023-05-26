@@ -15,7 +15,7 @@ import { NoPageComponent } from './no-page/no-page.component';
 import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
 import { faInstagram, faInstagramSquare} from '@fortawesome/free-brands-svg-icons'
 
-import * from '@ng-bootstrap'
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap'
 // database global import
 
 
@@ -34,7 +34,8 @@ import * from '@ng-bootstrap'
     BrowserModule,
     AppRoutingModule,
     NgOptimizedImage,
-    FontAwesomeModule
+    FontAwesomeModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]

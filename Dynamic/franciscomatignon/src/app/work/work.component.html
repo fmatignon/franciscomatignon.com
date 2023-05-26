@@ -1,5 +1,43 @@
+<!-- MOBILE CAROUSEL -->
 <div id="hero-wrapper">
-  <img [src]="coverImage" alt="">
+  <ngb-carousel *ngIf="mobile"[showNavigationArrows]='showNavigationArrows' [showNavigationIndicators]='showNavigationIndicators' [animation]="animation">
+    <ng-template ngbSlide>
+      <div class="picsum-img-wrapper">
+        <img src='../../assets/Covers/Mobile/0.jpg' alt="" />
+      </div>
+    </ng-template>
+    <ng-template ngbSlide>
+      <div class="picsum-img-wrapper">
+        <img src='../../assets/Covers/Mobile/1.jpg' alt="" />
+      </div>
+    </ng-template>
+  </ngb-carousel>
+</div>
+
+<!-- TABLET CAROUSEL -->
+<div id="hero-wrapper">
+  <ngb-carousel *ngIf="tablet" [showNavigationArrows]='showNavigationArrows' [showNavigationIndicators]='showNavigationIndicators' [animation]="animation">
+    
+    <ng-template ngbSlide>
+      <div class="picsum-img-wrapper">
+        <img src='../../assets/Covers/Tablet/0.jpg' alt="" />
+      </div>
+    </ng-template>
+
+  </ngb-carousel>
+</div>
+
+<!-- DESKTOP CAROUSEL -->
+<div id="hero-wrapper">
+  <ngb-carousel *ngIf="desktop" [showNavigationArrows]='showNavigationArrows' [showNavigationIndicators]='showNavigationIndicators' [animation]="animation">
+
+    <ng-template ngbSlide>
+      <div class="picsum-img-wrapper">
+        <img src='../../assets/Covers/Desktop/0.jpg' alt="" />
+      </div>
+    </ng-template>
+    
+  </ngb-carousel>
 </div>
 <div id="projects-wrapper">
   <app-project [project]="project" *ngFor="let project of projects | slice:1" class="project"></app-project>

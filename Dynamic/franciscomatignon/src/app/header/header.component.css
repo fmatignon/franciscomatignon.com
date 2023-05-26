@@ -4,6 +4,7 @@ header {
   height: 20px;
   font-size: medium;
   align-items: flex-start;
+  z-index: 1;
 }
 
 nav {
