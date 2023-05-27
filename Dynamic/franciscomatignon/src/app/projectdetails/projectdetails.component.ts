@@ -1,6 +1,6 @@
 import { Component, OnInit, ElementRef, ViewChild, AfterViewInit } from '@angular/core';
 import { Router, ActivatedRoute, Data } from '@angular/router';
-import { Location, PlatformLocation } from '@angular/common';
+import { Location, PlatformLocation, SlicePipe } from '@angular/common';
 import { DatabaseService } from '../database.service';
 import { Title } from '@angular/platform-browser';
 import { NgOptimizedImage } from '@angular/common';

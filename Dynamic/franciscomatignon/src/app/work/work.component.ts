@@ -4,32 +4,44 @@ import { Project } from 'src/classes/project';
 import { DatabaseService } from '../database.service';
 import { fromEvent, Observable, Subscription } from "rxjs";
 
-import { NgbCarousel, NgbCarouselConfig, NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbCarousel, NgbCarouselConfig, NgbCarouselModule, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import mobileCoversjson from '../../assets/database/mobileCovers.json'
+import tabletCoversjson from '../../assets/database/tabletCovers.json'
+import desktopCoversjson from '../../assets/database/desktopCovers.json'
+
+import { ReversePipe } from 'ngx-pipes';
 
 @Component({
   selector: 'app-work',
   templateUrl: './work.component.html',
-  styleUrls: ['./work.component.css']
+  styleUrls: ['./work.component.css'],
+  providers: [ReversePipe]
 })
 
-
-
 export class WorkComponent implements OnInit {
-
+  // -- MAKE RESPONSIVE
   mobile: boolean = false
   tablet: boolean = false
   desktop: boolean = false
   resizeObservable$: Observable<Event>
   resizeSubscription$: Subscription
+  // -- MAKE RESPONSIVE END
 
-
+  // -- CAROUSEL PARAMETERS
   showNavigationArrows = false;
   showNavigationIndicators = false;
   animation = false
 
-  constructor(private database: DatabaseService) { }
-  projects = this.database.projects
+  // Initialize projects array
+  projects: Project[] = []
+  // Initialize covers arrays
+  mobileCovers: string[] = mobileCoversjson
+  tabletCovers: string[] = tabletCoversjson
+  desktopCovers: string[] = desktopCoversjson
+
+  constructor(private database: DatabaseService, private reversePipe: ReversePipe) { }
   ngOnInit(): void {
+    // -- MAKE RESPONSIVE
     if (window.innerWidth >= 1200) {
       this.desktop = true
       this.tablet = false
@@ -63,5 +75,9 @@ export class WorkComponent implements OnInit {
         this.mobile = true
       }
     })
+    // -- MAKE RESPONSIVE END
+    
+    // Populate projects array
+    this.projects = this.database.projects
   }
 }

@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
 import { Project } from 'src/classes/project';
 //import database and array
 
-import { PROJECTS } from 'src/assets/database/database';
+import PROJECTS from 'src/assets/database/projects.json';
 
 @Injectable({
   providedIn: 'root'

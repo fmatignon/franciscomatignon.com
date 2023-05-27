@@ -16,6 +16,8 @@ import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontaweso
 import { faInstagram, faInstagramSquare} from '@fortawesome/free-brands-svg-icons'
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap'
+import { NgPipesModule } from 'ngx-pipes';
+import { CarouselModalComponent } from './carousel-modal/carousel-modal.component';
 // database global import
 
 
@@ -28,14 +30,16 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap'
     AboutComponent,
     FooterComponent,
     ProjectdetailsComponent,
-    NoPageComponent
+    NoPageComponent,
+    CarouselModalComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgOptimizedImage,
     FontAwesomeModule,
-    NgbModule
+    NgbModule,
+    NgPipesModule
   ],
   providers: [],
   bootstrap: [AppComponent]

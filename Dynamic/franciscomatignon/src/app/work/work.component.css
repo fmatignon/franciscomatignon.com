@@ -28,6 +28,25 @@
 #projects-wrapper {
   margin: 12px 12px;
 }
+#projects-wrapper:last-child {
+  margin-bottom: 32px;
+}
+#cta {
+  text-align: center;
+  margin-top: 32px;
+  margin-bottom: 32px;
+}
+#cta p {
+  font-size: large;
+  margin-bottom: 18px;
+}
+#cta button {
+  all: unset;
+  color: white;
+  background-color: black;
+  padding: 12px 30px;
+  font-family: 'Public sans';
+}
 
 /* Tablet*/
 @media screen and (min-width: 768px){

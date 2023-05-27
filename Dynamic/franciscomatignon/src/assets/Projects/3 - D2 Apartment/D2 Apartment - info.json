@@ -1,0 +1,13 @@
+{
+  "name": "D2 Apartment",
+  "clients": [{
+    "name": "",
+    "link": ""
+  }],
+  "year": 2022,
+  "location": {
+    "city": "",
+    "country": ""
+  },
+  "text":""
+}

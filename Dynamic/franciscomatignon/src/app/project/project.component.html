@@ -1,10 +1,26 @@
 <article>
-  <img
-    [routerLink]="['../',project.link]"
-    src="{{project.images[0]}}" width="100%">
-  <div>
+  <ng-template #content let-modal>
+    <!-- <ngb-carousel>
+      <ng-template *ngFor="let mobileCover of project.images" ngbSlide>
+        <div class="">
+          <img src='../../assets/Covers/Mobile/0.jpg' alt="" />
+        </div>
+      </ng-template>
+    </ngb-carousel> -->
+    <div id="modal-box">
+      <p class="previous-next" id="modal-previous">aaa</p>
+      <img  class="self-made-modal" [src]="project.cover" alt="">
+      <p class="previous-next" id="modal-next">bbb</p>
+    </div>
+
+
+  </ng-template>
+
+  <img class="project-cover" (click)="mobile? this.router.navigate(['../',project.link]):open(content)"
+    src="{{project.cover}}" width="100%">
+  <div
+  (click)="mobile? this.router.navigate(['../',project.link]):open(content)">
     <p>{{project.name}}</p>
-    <p>{{project.year}}</p>
   </div>
 </article>
 
