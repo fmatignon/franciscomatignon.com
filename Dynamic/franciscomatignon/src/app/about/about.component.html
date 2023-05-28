@@ -1,21 +1,50 @@
 <div id="about">
-  <img src="../../assets/IMG_0933.jpg">
-  <div id="about-text">
-    <p>
-      Im Francisco, an architecture student based in La Plata, Argentina. I'm passionate about bringing unbuilt spaces to life through visualization.
-      <br>
-      Let's get in touch!
-      <br><br>
-      +54 9 221 436 2935
-    </p><br>
-    <a href="https://instagram.com/franciscomatignon">@franciscomatignon</a>
-    <br><br>
-    <a href="mailto:hello@franciscomatignon.com">hello@franciscomatignon.com</a>
-    <p><br><br>
-      This website was designed and developed by me.
-      <br>
-      All rights reserved.
-    </p>
+  <div id="first-row">
+      <div id="about-text">
+    <h2>About our studio</h2>
+    <p>At <span class="bold-font">A</span>, we are a team of young architects and 3D artists helping professionals all across the building industries communicate unbuilt projects. Our images strive to go beyond photorealism and convey <span class="bold-font">meaning</span> and <span class="bold-font">emotion</span> to drive sales, move designs forward or win competitions.</p>
+    <p> Based in <span id="argentina">Argentina </span> and working globally.</p>
   </div>
+  <div id="contact">
+    <h2>Contact</h2>
+    <div class="contact-channel">
+      <p>Work</p>
+      <p>contact@arenderingstudio.com</p>
+    </div>
+    <div class="contact-channel">
+      <p>Instagram</p>
+      <a id="instagram" href="https://www.instagram.com/arenderingstudio">@arenderingstudio</a>
+    </div>
+    <div class="contact-channel">
+      <p>Founder / Director</p>
+      <a id="linkedIn" href="https://www.linkedin.com/in/fmatignon/">Francisco Matignon <fa-icon [icon]="['fab', 'linkedin']"></fa-icon></a>
+    </div>
+  </div>
+  </div>
+  <div id="form-container" *ngIf="!mobile">
+      <form action="" method="post">
+        <h3>Contact us</h3>
+        <fieldset>
+          <legend class="form-legend">Name <span class="required">(Required)</span></legend>
+          <input  type="text" tabindex="1" required autofocus>
+        </fieldset>
+        <fieldset>
+          <legend class="form-legend">Email <span class="required">(Required)</span></legend>
+          <input  type="email" tabindex="2" required>
+        </fieldset>
+        <fieldset>
+          <legend class="form-legend">Subject <span class="required">(Required)</span></legend>
+          <input  type="text" tabindex="3" required>
+        </fieldset>
+        <fieldset>
+          <legend class="form-legend">Message <span class="required">(Required)</span></legend>
+          <textarea  tabindex="4" required></textarea>
+        </fieldset>
+        <fieldset>
+          <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
+        </fieldset>
+      </form>
+  </div>
+  <h3>Your vision, our pixels</h3>
+  <hr *ngIf="mobile || tablet">
 </div>
-

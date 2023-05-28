@@ -1,0 +1,19 @@
+<ng-container  *ngIf="show" >
+  <div class="modal-container" #modalBackground>
+    <div class="modal-content">
+      <p>aaa      </p>
+    <ngb-carousel #carousel>
+      <ng-template ngbSlide>
+        <div #slideWrapper class="slide-wrapper">
+          <img [src]="currentProject.cover" alt="" />
+        </div>
+      </ng-template>
+      <ng-template *ngFor="let image of currentProject.images" ngbSlide>
+        <div #slideWrapper2 class="slide-wrapper">
+          <img [src]="image" alt="" />
+        </div>
+      </ng-template>
+    </ngb-carousel>
+    </div>
+  </div>
+</ng-container>

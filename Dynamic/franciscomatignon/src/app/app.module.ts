@@ -13,11 +13,12 @@ import { NgOptimizedImage } from '@angular/common';
 import { NoPageComponent } from './no-page/no-page.component';
 
 import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
-import { faInstagram, faInstagramSquare} from '@fortawesome/free-brands-svg-icons'
+import { faInstagram, faInstagramSquare, faLinkedin} from '@fortawesome/free-brands-svg-icons'
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap'
 import { NgPipesModule } from 'ngx-pipes';
-import { CarouselModalComponent } from './carousel-modal/carousel-modal.component';
+import { ModalGalleryComponent } from './modal-gallery/modal-gallery.component';
+
 // database global import
 
 
@@ -31,7 +32,7 @@ import { CarouselModalComponent } from './carousel-modal/carousel-modal.componen
     FooterComponent,
     ProjectdetailsComponent,
     NoPageComponent,
-    CarouselModalComponent
+    ModalGalleryComponent
   ],
   imports: [
     BrowserModule,
@@ -48,6 +49,6 @@ export class AppModule {
   constructor(library: FaIconLibrary) {
     library.addIcons(
     faInstagram,
-    faInstagramSquare)   
+    faLinkedin)   
   }
 }

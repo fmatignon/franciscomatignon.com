@@ -1,5 +1,5 @@
 import { Component, OnInit, ElementRef, ViewChild, AfterViewInit } from '@angular/core';
-import { Router, ActivatedRoute, Data } from '@angular/router';
+import { Router, ActivatedRoute, Data, NavigationEnd } from '@angular/router';
 import { Location, PlatformLocation, SlicePipe } from '@angular/common';
 import { DatabaseService } from '../database.service';
 import { Title } from '@angular/platform-browser';
@@ -67,6 +67,11 @@ export class ProjectdetailsComponent implements OnInit {
     else {
       this.mobile = true
     }
+    this.router.events.subscribe(x => {
+      if (x instanceof NavigationEnd) {
+        this.toTop()
+      }
+    })
   }
   ngOnDestroy() {
     this.resizeSubscription$.unsubscribe()

@@ -58,6 +58,18 @@ body {
 /* RESET END */
 /* RESET END */
 
+@font-face {
+  font-family: 'Public Sans';
+  src: url('./assets/Public Sans/PublicSans-Regular.ttf');
+}
+@font-face {
+  font-family: 'Public Sans ExtraLight';
+  src: url('./assets/Public Sans/PublicSans-ExtraLight.ttf');
+}
+@font-face {
+  font-family: 'Public Sans Semibold';
+  src: url('./assets/Public Sans/PublicSans-SemiBold.ttf');
+}
 body {
   font-family: 'Public Sans', sans-serif;
   font-size: small;
@@ -65,8 +77,11 @@ body {
 	text-align: justify;
   text-justify: inter-word;
 }
-main {
-  min-height: calc(100vh - 3px - 72px - 64px);
+.bold-font {
+	font-family: 'Public Sans Semibold', sans-serif;
+}
+.light-font {
+	font-family: 'Public Sans ExtraLight', sans-serif;
 }
 a {
 	all: unset;
@@ -74,6 +89,7 @@ a {
 }
 a:hover {
 	opacity: .4;
+	color: inherit;
 }
 
 :hover {
@@ -114,6 +130,13 @@ a:hover {
 .fade:not(.show) {
   opacity: 0;
 }
+
+.carousel-control-next, .carousel-control-prev {
+	width: auto;
+	height: min-content;
+	margin: auto;
+}
+
 /* MODAL */
 
 
@@ -136,15 +159,9 @@ a:hover {
 	body {
 		font-size: medium;
 	}
-	main {
-		min-height: calc(100vh - 3px - 89px - 90px);
-	}
 }
 
 /* Desktop*/
 @media (min-width: 768px){
-	main {
-		min-height: calc(100vh - 3px - 63px - 90px);
-	}
 }
 

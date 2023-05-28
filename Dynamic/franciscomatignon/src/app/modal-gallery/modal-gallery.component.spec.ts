@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CarouselModalComponent } from './carousel-modal.component';
+import { ModalGalleryComponent } from './modal-gallery.component';
 
-describe('CarouselModalComponent', () => {
-  let component: CarouselModalComponent;
-  let fixture: ComponentFixture<CarouselModalComponent>;
+describe('ModalGalleryComponent', () => {
+  let component: ModalGalleryComponent;
+  let fixture: ComponentFixture<ModalGalleryComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CarouselModalComponent ]
+      declarations: [ ModalGalleryComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(CarouselModalComponent);
+    fixture = TestBed.createComponent(ModalGalleryComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

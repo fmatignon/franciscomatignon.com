@@ -1,4 +1,6 @@
-<footer *ngIf="(router.url != '/about')">
-  <p id="btt" [ngClass]="{'margin-top':desktop}" *ngIf="(mobile || ((router.url == '/work' || ''))) && (router.url != '/404')"> <a (click)="toTop()">Back to top</a>  </p>
-  <p [ngClass]="{'center':tablet && router.url != ('/work' || ''), 'second-column': router.url!= ('/work' || '')}" id="copy">ⓒ A - rendering studio, 2023.</p>
+<footer [ngClass]="{'absolute': !mobile && router.url == '/about'}">
+  <div class="footer-elements">
+    <p *ngIf="((router.url!='/about'))"><a (click)="toTop()">Back to top</a></p>
+    <p>ⓒ A - rendering studio, 2023.</p>
+  </div>
 </footer>

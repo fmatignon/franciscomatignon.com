@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import projects from '../../assets/database/projects.json'
 import { Project } from 'src/classes/project';
 import { DatabaseService } from '../database.service';

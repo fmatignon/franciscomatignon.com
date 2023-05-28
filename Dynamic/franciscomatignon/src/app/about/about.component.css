@@ -1,51 +1,119 @@
 #about {
+  margin: 96px 32px 0 32px;
+}
+#about-text {
+  text-align: left;
+}
+h2 {
+  font-size: large;
+  margin-bottom: 24px;
+}
+p {
   font-size: medium;
-  padding-top: 40px;
-}
-img {
   margin-bottom: 16px;
-  width: 164px;
 }
-
+h3 {
+  margin-top: 48px;
+  margin-bottom: 32px;
+  text-align: center;
+  font-size: x-large;
+}
+#argentina:hover {
+  color: rgb(116, 172, 223);
+}
+#contact {
+  margin-top: 32px;
+}
+.contact-channel {
+  display: block;
+  margin-bottom: 24px;
+}
+.contact-channel a, .contact-channel p {
+  opacity: .6;
+  font-size: medium;
+}
+.contact-channel a {
+  height: min-content;
+}
+#linkedIn:hover {
+  opacity: 1;
+  color: rgb(0, 114, 177);
+}
+#instagram:hover {
+  opacity: 1;
+  color: rgb(233, 89, 90);
+}
+.required {
+  opacity: .6;
+}
+legend {
+  margin-bottom: 8px;
+}
 /* Tablet*/
 @media (min-width: 768px){
- #about {
-  display: grid;
-  grid-template-columns: repeat(2,1fr);
-  grid-column-gap: 20px;
-  padding-top: 120px;
+  #first-row {
+    width: 80%;
+    margin: auto;
+    display: grid;
+    justify-content: space-between;
+    grid-template-columns: repeat(2, 50%);
   }
   #about-text {
-    grid-column: 2;
-    width: 380px;
-    margin: 0;
+    text-align: justify;
   }
-  img {
-    grid-column: 1;
-    width: 240px;
-    height: 240px;
-    justify-self: end;
-    margin: 0;
+  #contact {
+    margin-top: 0;
+    text-align: right;
+  }
+  h3 {
+    margin-top: 96px;
+    grid-column: 1 / span 2;
+    font-size: xx-large;
+  }
+  #form-container {
+    display: flex;
+    margin: auto;
+    justify-content: center;
+    width: 80%;
+    margin-top: 48px;
+  }
+  form {
+    width: 100%;
+  }
+  form fieldset {
+    margin-bottom: 16px;
+  }
+  hr {
+    margin-top: 64px;
+  }
+
+  form input, form textarea {
+    all: unset;
+    width: 100%;
+    border: 1px solid gray;
+    border-radius: 2px;
+    background-color: rgba(0, 0, 0, .025);
+  }
+  form textarea {
+    height: 90px;
+  }
+  form button {
+    all: unset;
+    color: white;
+    background-color: black;
+    padding: 12px 30px;
+    border-radius: 4px;
+  }
+  form button:hover {
+    background-color: rgba(0, 0, 0, .85);
+    cursor: pointer;
+  }
+  
+  form button:active {
+    background-color: rgba(0, 0, 0, .65);
   }
 }
-
 /* Desktop*/
 @media (min-width: 1200px){
- #about {
-  display: grid;
-  grid-template-columns: repeat(3,1fr);
-  grid-column-gap: 16px;
-  padding-top: 120px;
-  }
-  #about-text {
-    grid-column: 2;
-    margin: 0;
-  }
-  img {
-    grid-column: 1;
-    width: 240px;
-    height: 240px;
-    justify-self: end;
-    margin: 0;
-  }
+
 }

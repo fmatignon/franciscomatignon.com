@@ -30,13 +30,15 @@
 </div>
 <!-- PROJECTS-->
 <div id="projects-wrapper">
-  <app-project [project]="project" *ngFor="let project of projects | slice: 1 | reverse" class="project"></app-project>
+  <app-project *ngFor="let project of projects | slice: 1 | reverse" [project]="project" (click)="!mobile ? gallery.showGallery(project.link) : ''" class="project"></app-project>
 </div>
-
+  <!-- MODAL -->
+  <app-modal-gallery #gallery>
+  </app-modal-gallery>
 <!-- CTA -->
 <div id="cta">
-  <p>Let's bring your projects to life.</p>
-  <button>
+  <p>Your vision, our pixels</p>
+  <button routerLink="/about">
     CONTACT
   </button>
 </div>

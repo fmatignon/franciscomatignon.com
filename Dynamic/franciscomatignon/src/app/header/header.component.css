@@ -22,7 +22,9 @@ object {
   position: absolute;
   top: -20px;
   width: 80px;
-  pointer-events: none;
+}
+object:hover {
+  opacity: .4;
 }
 .non-clickable {
   pointer-events: none;
