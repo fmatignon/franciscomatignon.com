@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { fromEvent, Observable, Subscription } from "rxjs";
+import emailjs, { EmailJSResponseStatus } from '@emailjs/browser';
 
 @Component({
   selector: 'app-about',
@@ -14,6 +15,32 @@ export class AboutComponent implements OnInit {
     resizeObservable$: Observable<Event>
     resizeSubscription$: Subscription
     // -- MAKE RESPONSIVE END
+  
+    name: string ="";
+    email: string ="";
+    subject: string ="";
+    message: string ="";
+    
+    serviceID ="service_7pvvwqm"
+    templateID ="template_4za1b1j"
+    publicKey ="GnFFybdLoElFXsyEy"
+    params ={
+      'name': '',
+      'email': '',
+      'subject': '',
+      'message': ''
+    }
+    public sendEmail() {
+      emailjs.send(this.serviceID,this.templateID, this.params, this.publicKey).then(
+        res => {
+          this.params.name = "";
+          this.params.email ="";
+          this.params.subject = "";
+          this.params.message = "";
+          console.log(res);
+          alert("Message sent");
+        })
+    }
 
   constructor() { }
 

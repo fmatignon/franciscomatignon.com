@@ -53,13 +53,11 @@ legend {
 @media (min-width: 768px){
   #first-row {
     width: 80%;
-    margin: auto;
+    margin-right: auto;
+    margin-left: auto;
     display: grid;
     justify-content: space-between;
     grid-template-columns: repeat(2, 50%);
-  }
-  #about-text {
-    text-align: justify;
   }
   #contact {
     margin-top: 0;
@@ -115,5 +113,39 @@ legend {
 }
 /* Desktop*/
 @media (min-width: 1200px){
-
+  #about {
+    display: grid;
+    grid-template-columns: 1.5fr 2fr;
+    margin-top: 96px;
+  }
+  #first-row {
+    display: block;
+  }
+  #contact {
+    text-align: left;
+    margin-top: 32px;
+    padding-right: 16px; ;
+  }
+  .contact-channel {
+    display: flex;
+    justify-content: space-between;
+  }
+  .contact-channel p:first-of-type::after {
+    content: ':';
+  }
+  #form-container {
+    margin: auto;
+    width: 75%;
+  }
+  #form-container h3 {
+    text-align: left;
+  }
+  h3 {
+    margin-top: 0;
+  }
+  #cta {
+    margin-top: 96px;
+    grid-column: 2;
+    margin-bottom: 0;
+  }
 }

@@ -1,50 +1,54 @@
 <div id="about">
   <div id="first-row">
-      <div id="about-text">
-    <h2>About our studio</h2>
-    <p>At <span class="bold-font">A</span>, we are a team of young architects and 3D artists helping professionals all across the building industries communicate unbuilt projects. Our images strive to go beyond photorealism and convey <span class="bold-font">meaning</span> and <span class="bold-font">emotion</span> to drive sales, move designs forward or win competitions.</p>
-    <p> Based in <span id="argentina">Argentina </span> and working globally.</p>
-  </div>
-  <div id="contact">
-    <h2>Contact</h2>
-    <div class="contact-channel">
-      <p>Work</p>
-      <p>contact@arenderingstudio.com</p>
+    <div id="about-text">
+      <h2>About our studio</h2>
+      <p>At <span class="bold-font">A</span>, we are a team of young architects and 3D artists helping professionals all across the building industries communicate unbuilt projects. Our images strive to go beyond photorealism and convey <span class="bold-font">meaning</span> and <span class="bold-font">emotion</span> to drive sales, move designs forward or win competitions.</p>
+      <p> Based in <span id="argentina">Argentina </span> and working globally.</p>
     </div>
-    <div class="contact-channel">
-      <p>Instagram</p>
-      <a id="instagram" href="https://www.instagram.com/arenderingstudio">@arenderingstudio</a>
+    <div id="contact">
+      <h2>Contact</h2>
+      <div class="contact-channel">
+        <p>Work</p>
+        <p>contact@arenderingstudio.com</p>
+      </div>
+      <div class="contact-channel">
+        <p>Instagram</p>
+        <a id="instagram" href="https://www.instagram.com/arenderingstudio">@arenderingstudio</a>
+      </div>
+      <div class="contact-channel">
+        <p>Founder / Director</p>
+        <a id="linkedIn" href="https://www.linkedin.com/in/fmatignon/">Francisco Matignon <fa-icon [icon]="['fab', 'linkedin']"></fa-icon></a>
+      </div>
     </div>
-    <div class="contact-channel">
-      <p>Founder / Director</p>
-      <a id="linkedIn" href="https://www.linkedin.com/in/fmatignon/">Francisco Matignon <fa-icon [icon]="['fab', 'linkedin']"></fa-icon></a>
-    </div>
-  </div>
   </div>
   <div id="form-container" *ngIf="!mobile">
-      <form action="" method="post">
-        <h3>Contact us</h3>
-        <fieldset>
-          <legend class="form-legend">Name <span class="required">(Required)</span></legend>
-          <input  type="text" tabindex="1" required autofocus>
-        </fieldset>
-        <fieldset>
-          <legend class="form-legend">Email <span class="required">(Required)</span></legend>
-          <input  type="email" tabindex="2" required>
-        </fieldset>
-        <fieldset>
-          <legend class="form-legend">Subject <span class="required">(Required)</span></legend>
-          <input  type="text" tabindex="3" required>
-        </fieldset>
-        <fieldset>
-          <legend class="form-legend">Message <span class="required">(Required)</span></legend>
-          <textarea  tabindex="4" required></textarea>
-        </fieldset>
-        <fieldset>
-          <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
-        </fieldset>
-      </form>
+    <form action="" method="" #contactForm ="ngForm" (ngSubmit)="contactForm.valid ? sendEmail() : ''">
+      <h3>Contact us</h3>
+      <fieldset>
+        <legend class="form-legend">Name</legend>
+        <input  type="text" name="name" id="name" [(ngModel)]="params.name" tabindex="1" required autofocus #nameInput="ngModel">
+      </fieldset>
+      <fieldset>
+        <legend class="form-legend">Email</legend>
+        <input  type="email" name="email" id="email" [(ngModel)]="params.email" tabindex="2" required #emailInput="ngModel" email>
+      </fieldset>
+      <fieldset>
+        <legend class="form-legend">Subject</legend>
+        <input  type="text" name="subject" id="subject" [(ngModel)]="params.subject" tabindex="3" required #subjectInput="ngModel">
+      </fieldset>
+      <fieldset>
+        <legend class="form-legend">Message</legend>
+        <textarea  tabindex="4" name="message" id="message" [(ngModel)]="params.message" required #messageInput="ngModel"></textarea>
+      </fieldset>
+      <fieldset>
+        <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Send</button>
+      </fieldset>
+      <input type="hidden" name="_after" value="https://www.instagram.com">
+      <div style="opacity: 0.6;" *ngIf="contactForm.invalid">
+        Every field is required.
+      </div>
+    </form>
   </div>
-  <h3>Your vision, our pixels</h3>
+  <h3 id="cta" *ngIf="!desktop" >Your vision, our pixels</h3>
   <hr *ngIf="mobile || tablet">
 </div>

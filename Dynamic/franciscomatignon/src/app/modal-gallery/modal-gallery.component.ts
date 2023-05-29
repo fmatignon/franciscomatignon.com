@@ -1,18 +1,16 @@
 import { Component, OnInit, Input, ViewChild, ElementRef, Renderer2 } from '@angular/core';
 import { DatabaseService } from '../database.service';
-import { Project } from 'src/classes/project';
-import { async } from '@angular/core/testing';
+import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-modal-gallery',
   templateUrl: './modal-gallery.component.html',
-  styleUrls: ['./modal-gallery.component.css']
+  styleUrls: ['./modal-gallery.component.css'],
 })
 export class ModalGalleryComponent implements OnInit {
   @Input() title = '';
   @ViewChild('modalBackground') modalBackground: ElementRef;
   @ViewChild('slideWrapper') slideWrapper: ElementRef;
-  @ViewChild('slideWrapper') slideWrapper2: ElementRef;
   @ViewChild('carousel') carousel: ElementRef;
   show = false;
   hideGallery(): void {
@@ -26,13 +24,15 @@ export class ModalGalleryComponent implements OnInit {
     this.show = true
   }
 
-  constructor(private renderer: Renderer2, private database: DatabaseService) {
+  constructor(private renderer: Renderer2, private database: DatabaseService, private carouselConfig: NgbCarouselConfig) {
     this.renderer.listen('window', 'click', (e: Event) => {
-      if (this.modalBackground && (e.target === this.modalBackground.nativeElement || e.target === this.slideWrapper.nativeElement || e.target === this.carousel.nativeElement|| e.target === this.slideWrapper2.nativeElement)) {
-        this.hideGallery()
+      if (this.slideWrapper && ((e.target as HTMLDivElement).classList.contains('slide-wrapper'))) {
+          this.hideGallery()
       }
-      console.log(e.target)
     })
+    this.carouselConfig.interval = 999999;
+    this.carouselConfig.keyboard = true;
+    this.carouselConfig.animation = false;
   }
 
   ngOnInit(): void {

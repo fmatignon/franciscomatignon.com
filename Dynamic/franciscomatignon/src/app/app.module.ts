@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -18,6 +19,8 @@ import { faInstagram, faInstagramSquare, faLinkedin} from '@fortawesome/free-bra
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap'
 import { NgPipesModule } from 'ngx-pipes';
 import { ModalGalleryComponent } from './modal-gallery/modal-gallery.component';
+import { FormsModule } from '@angular/forms';
+import { EmailService } from './email.service';
 
 // database global import
 
@@ -32,7 +35,7 @@ import { ModalGalleryComponent } from './modal-gallery/modal-gallery.component';
     FooterComponent,
     ProjectdetailsComponent,
     NoPageComponent,
-    ModalGalleryComponent
+    ModalGalleryComponent,
   ],
   imports: [
     BrowserModule,
@@ -40,9 +43,11 @@ import { ModalGalleryComponent } from './modal-gallery/modal-gallery.component';
     NgOptimizedImage,
     FontAwesomeModule,
     NgbModule,
-    NgPipesModule
+    NgPipesModule,
+    FormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [EmailService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

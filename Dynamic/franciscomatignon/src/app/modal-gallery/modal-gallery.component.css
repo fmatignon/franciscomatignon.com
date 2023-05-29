@@ -11,16 +11,13 @@
   justify-content: center;
   overflow-y: auto;
   z-index: 9999;
-  background-color: aquamarine;
 }
 ngb-carousel {
   width: 95vw;
   height: auto;
   text-align: center;
-  background-color: red;
 }
 .slide-wrapper img {
   max-width: 95vw;
   max-height: 90vh;
-  background-color: aqua;
 }
