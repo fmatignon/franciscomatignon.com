@@ -20,13 +20,12 @@ export class ModalGalleryComponent implements OnInit {
   showGallery(projectLink: string){
     let plString = String(projectLink)
     this.currentProject = this.database.getProjectByLink(plString)
-    console.log(this.currentProject)
     this.show = true
   }
 
   constructor(private renderer: Renderer2, private database: DatabaseService, private carouselConfig: NgbCarouselConfig) {
     this.renderer.listen('window', 'click', (e: Event) => {
-      if (this.slideWrapper && ((e.target as HTMLDivElement).classList.contains('slide-wrapper'))) {
+      if (this.slideWrapper && ((e.target as HTMLDivElement).classList.contains('slide-wrapper') || (e.target as HTMLDivElement).classList.contains('modal-container'))) {
           this.hideGallery()
       }
     })
