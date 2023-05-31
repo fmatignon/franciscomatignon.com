@@ -18,9 +18,9 @@ export class ModalGalleryComponent implements OnInit {
   }
   currentProject: any;
   showGallery(projectLink: string){
-    let plString = String(projectLink)
-    this.currentProject = this.database.getProjectByLink(plString)
-    this.show = true
+    let plString = String(projectLink);
+    this.currentProject = this.database.getProjectByLink(plString);
+    this.show = true;
   }
 
   constructor(private renderer: Renderer2, private database: DatabaseService, private carouselConfig: NgbCarouselConfig) {

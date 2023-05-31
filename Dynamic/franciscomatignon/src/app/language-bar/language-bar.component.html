@@ -1,0 +1,3 @@
+<div id="language-bar">
+  <span (click)="translate.use(lang)" [ngClass]="{'current-lang': lang == translate.currentLang}" *ngFor="let lang of translate.getLangs()"> {{lang | uppercase}}</span>
+</div>

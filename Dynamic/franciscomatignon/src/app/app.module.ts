@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http'
+import { HttpClientModule, HttpClient } from '@angular/common/http'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -22,8 +22,9 @@ import { ModalGalleryComponent } from './modal-gallery/modal-gallery.component';
 import { FormsModule } from '@angular/forms';
 import { EmailService } from './email.service';
 
-// database global import
-
+import { TranslateLoader, TranslateModule  } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { LanguageBarComponent } from './language-bar/language-bar.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { EmailService } from './email.service';
     ProjectdetailsComponent,
     NoPageComponent,
     ModalGalleryComponent,
+    LanguageBarComponent,
   ],
   imports: [
     BrowserModule,
@@ -45,7 +47,14 @@ import { EmailService } from './email.service';
     NgbModule,
     NgPipesModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: httpTranslateLoader,
+        deps: [HttpClient]
+      }
+    })
   ],
   providers: [EmailService],
   bootstrap: [AppComponent]
@@ -56,4 +65,8 @@ export class AppModule {
     faInstagram,
     faLinkedin)   
   }
+}
+// AOT compilation support
+export function httpTranslateLoader(http: HttpClient) {
+  return new TranslateHttpLoader(http);
 }

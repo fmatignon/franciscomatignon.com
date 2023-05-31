@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Project } from 'src/classes/project';
+import { Project } from '../../classes/project';
 import { Route, Router } from '@angular/router';
 import { fromEvent, Observable, Subscription } from "rxjs";
 

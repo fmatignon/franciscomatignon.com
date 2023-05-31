@@ -1,10 +1,10 @@
 <header>
   <div id="logo-container">
-    <object  id="logo-link" routerLink="work" routerLinkActive="non-clickable" data="../../assets/Asset 6.svg"></object>
+    <object  id="logo-link" routerLink="work" data="../../assets/Asset 6.svg"></object>
   </div>
   <nav>
-    <a routerLinkActive="active" routerLink="work">Work</a>
-    <a routerLinkActive="active" routerLink="about">About</a>
+    <a routerLinkActive="active" routerLink="work">{{ 'work' | translate}}</a>
+    <a routerLinkActive="active" routerLink="about">{{ 'about' | translate}}</a>
     <a href="https://www.instagram.com/arenderingstudio"><fa-icon [icon]="['fab', 'instagram']"size="lg"></fa-icon></a>
   </nav>
 </header>

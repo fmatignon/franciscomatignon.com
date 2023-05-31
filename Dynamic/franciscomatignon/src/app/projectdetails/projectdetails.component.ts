@@ -6,7 +6,7 @@ import { Title } from '@angular/platform-browser';
 import { NgOptimizedImage } from '@angular/common';
 import { fromEvent, Observable, Subscription } from "rxjs";
 
-import { Project } from 'src/classes/project';
+import { Project } from '../../classes/project';
 
 import projects from '../../assets/database/projects.json'
 
@@ -57,7 +57,7 @@ export class ProjectdetailsComponent implements OnInit {
     if (this.activeProjectLinkId == 0) {
       this.router.navigateByUrl('404')
     }
-    this.title.setTitle(`Francisco Matignon - ${this.activeProject.name}`)
+    this.title.setTitle(` A - ${this.activeProject.name}`)
     if (window.innerWidth >= 1200) {
       this.desktop = true
     }

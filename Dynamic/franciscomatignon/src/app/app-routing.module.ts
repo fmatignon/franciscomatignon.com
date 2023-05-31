@@ -9,7 +9,7 @@ const routes: Routes = [
   { path:'', redirectTo: '/work', pathMatch:'full'},
   { path:'work', title:'A - rendering studio', component:WorkComponent},
   { path:'work/:*', redirectTo:'/404', pathMatch:'full'},
-  { path:'about', title:'Francisco Matignon - About', component:AboutComponent},
+  { path:'about', title:'A - rendering studio', component:AboutComponent},
   { path:'404', title:'404 not found', component:NoPageComponent},
   { path:':project', component:ProjectdetailsComponent},
   { path:':*/:*', redirectTo:'/404', pathMatch:'full'},

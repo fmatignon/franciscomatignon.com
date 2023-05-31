@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
 
 // import project class
-import { Project } from 'src/classes/project';
+import { Project } from '../classes/project';
 //import database and array
 
-import PROJECTS from 'src/assets/database/projects.json';
+import PROJECTS from '../assets/database/projects.json';
 
 @Injectable({
   providedIn: 'root'

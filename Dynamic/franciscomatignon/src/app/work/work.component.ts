@@ -1,6 +1,6 @@
 import { Component, OnInit} from '@angular/core';
 import projects from '../../assets/database/projects.json'
-import { Project } from 'src/classes/project';
+import { Project } from '../../classes/project'
 import { DatabaseService } from '../database.service';
 import { fromEvent, Observable, Subscription } from "rxjs";
 

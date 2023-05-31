@@ -1,6 +1,6 @@
 <footer [ngClass]="{'absolute': !mobile && router.url == '/about'}">
   <div class="footer-elements">
-    <p *ngIf="((router.url!='/about'))"><a (click)="toTop()">Back to top</a></p>
+    <p *ngIf="((router.url!='/about'))"><a (click)="toTop()">{{"back-to-top" | translate}}</a></p>
     <p>ⓒ A - rendering studio, 2023.</p>
   </div>
 </footer>

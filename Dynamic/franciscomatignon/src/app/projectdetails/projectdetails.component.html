@@ -5,11 +5,19 @@
     <img class="cover" [src]="activeProject.cover" alt="" width="100%">
     <!-- Titulo -->
     <p id="project-title">{{activeProject.name}} 
-      <span *ngIf="activeProject.clients[0].name"> for 
-        <span class="client" *ngFor="let client of activeProject.clients">
-          <a *ngIf="client.link != ''; else noLink" [href]="client.link != '' ? client.link : ''">{{client.name}}</a>
-          <ng-template #noLink>{{client.name}}</ng-template>
-        </span>
+      <span *ngIf="activeProject.clients[0].name">{{'for' | translate}}
+        <span class="client" *ngFor="let client of activeProject.clients; index as i">
+          <a *ngIf="client.link != ''; else noLink" [href]="client.link != '' ? client.link : ''">{{client.name + (i < activeProject.clients.length-1? 
+            (i != activeProject.clients.length-2 ? ',': 'and' | translate
+            ): '.')}}
+          </a>
+          <ng-template #noLink>{{client.name  + (i < activeProject.clients.length-1? 
+            (i != activeProject.clients.length-2 ? ',': 'and' | translate
+            ): '.')}}
+          </ng-template>
+
+        
+</span>
       </span></p>
     <!-- Imagenes -->
     <img *ngFor="let image of activeProject.images; index as a" [src]="activeProject.images[a]" width="100%">
@@ -17,8 +25,8 @@
   </div>
   <!-- Previows-next -->
   <div id="previous-next-project">
-    <a [ngClass]="{'hidden': firstProject}" (click)="this.previousProject()">Previous</a>
-    <a [ngClass]="{'hidden': lastProject}" (click)="this.nextProject()">Next</a>
+    <a [ngClass]="{'hidden': firstProject}" (click)="this.previousProject()">{{'previous' | translate}}</a>
+    <a [ngClass]="{'hidden': lastProject}" (click)="this.nextProject()">{{'next' | translate}}</a>
   </div>
 <!--
 

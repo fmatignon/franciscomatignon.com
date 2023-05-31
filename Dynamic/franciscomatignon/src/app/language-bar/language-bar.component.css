@@ -1,0 +1,16 @@
+#language-bar {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 32px;
+  padding-top: 12px;
+}
+span {
+  opacity: .5;
+  font-size: small;
+  cursor: pointer;
+  margin-left: 12px ;
+}
+.current-lang {
+  opacity: 1;
+  font-family: 'Public Sans Semibold', sans-serif;
+}

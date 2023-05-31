@@ -41,15 +41,6 @@ img {
   font-size: large;
   margin: 48px 16px;
 }
-.client:not(:nth-last-of-type(2)):not(:last-of-type):after {
-  content: ", ";
-}
-.client:last-of-type::before {
-  content: " and ";
-}
-.client:last-of-type::after {
-  content: ".";
-}
 /* Tablet*/
 @media (min-width: 768px){
 

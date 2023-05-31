@@ -3,6 +3,7 @@ import { Router, ActivatedRoute, ActivatedRouteSnapshot, ParamMap, Route, UrlSeg
 import { Location } from '@angular/common';
 import { Observable } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
+import { Element } from '@angular/compiler';
 
 import { DatabaseService } from '../database.service';
 
@@ -16,9 +17,14 @@ export class HeaderComponent implements OnInit {
     private router: Router,
     private route: ActivatedRoute,
     private location: Location,
-    private database: DatabaseService
+    private database: DatabaseService,
   ) {  }
 
   ngOnInit(): void {
+  }
+  projectsSection = document.getElementById('header')
+  projectsScroll() {
+    alert(this.projectsSection)
+    this.projectsSection?.scrollIntoView({behavior:'smooth'})
   }
 }
