@@ -4,7 +4,7 @@ import { Project } from '../../classes/project'
 import { DatabaseService } from '../database.service';
 import { fromEvent, Observable, Subscription } from "rxjs";
 
-import { NgbCarousel, NgbCarouselConfig, NgbCarouselModule, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
 import mobileCoversjson from '../../assets/database/mobileCovers.json'
 import tabletCoversjson from '../../assets/database/tabletCovers.json'
 import desktopCoversjson from '../../assets/database/desktopCovers.json'
@@ -28,18 +28,25 @@ export class WorkComponent implements OnInit {
   // -- MAKE RESPONSIVE END
 
   // -- CAROUSEL PARAMETERS
-  showNavigationArrows = false;
-  showNavigationIndicators = false;
-  animation = false
-
   // Initialize projects array
   projects: Project[] = []
   // Initialize covers arrays
   mobileCovers: string[] = mobileCoversjson
   tabletCovers: string[] = tabletCoversjson
   desktopCovers: string[] = desktopCoversjson
+  carousel = {
+  animation: false,
+  showNavigationArrows: false,
+  showNavigationIndicators: false,
+  interval: 8000,
+  pauseOnFocus: false,
+  pauseOnHover: false,
+  keyboard: false
+}
 
-  constructor(private database: DatabaseService, private reversePipe: ReversePipe) { }
+  constructor(private database: DatabaseService, 
+    private reversePipe: ReversePipe) {
+    }
   ngOnInit(): void {
     // -- MAKE RESPONSIVE
     if (window.innerWidth >= 1200) {

@@ -1,6 +1,13 @@
 <!-- MOBILE CAROUSEL -->
-<div *ngIf="mobile" id="hero-wrapper">
-  <ngb-carousel [showNavigationArrows]='showNavigationArrows' [showNavigationIndicators]='showNavigationIndicators' [animation]="animation">
+<div id="hero-wrapper" *ngIf="mobile">
+  <ngb-carousel
+  [animation]="carousel.animation"
+  [showNavigationArrows]="carousel.showNavigationArrows"
+  [showNavigationIndicators]="carousel.showNavigationIndicators"
+  [interval]="carousel.interval"
+  [pauseOnFocus]="carousel.pauseOnFocus"
+  [pauseOnHover]="carousel.pauseOnHover"
+  [keyboard]="carousel.keyboard">
     <ng-template *ngFor="let mobileCover of mobileCovers" ngbSlide>
       <div class="picsum-img-wrapper">
         <img [src]='"../../assets/Covers/Mobile/" + mobileCover' alt="" />
@@ -10,7 +17,14 @@
 </div>
 <!-- TABLET CAROUSEL -->
 <div *ngIf="tablet" id="hero-wrapper">
-  <ngb-carousel [showNavigationArrows]='showNavigationArrows' [showNavigationIndicators]='showNavigationIndicators' [animation]="animation">
+  <ngb-carousel
+  [animation]="carousel.animation"
+  [showNavigationArrows]="carousel.showNavigationArrows"
+  [showNavigationIndicators]="carousel.showNavigationIndicators"
+  [interval]="carousel.interval"
+  [pauseOnFocus]="carousel.pauseOnFocus"
+  [pauseOnHover]="carousel.pauseOnHover"
+  [keyboard]="carousel.keyboard">
     <ng-template *ngFor="let tabletCover of tabletCovers" ngbSlide>
       <div class="picsum-img-wrapper">
         <img [src]='"../../assets/Covers/Tablet/" + tabletCover' alt="" />
@@ -20,7 +34,15 @@
 </div>
 <!-- DESKTOP CAROUSEL -->
 <div *ngIf="desktop" id="hero-wrapper">
-  <ngb-carousel [showNavigationArrows]='showNavigationArrows' [showNavigationIndicators]='showNavigationIndicators' [animation]="animation">
+  <ngb-carousel
+  [animation]="carousel.animation"
+  [showNavigationArrows]="carousel.showNavigationArrows"
+  [showNavigationIndicators]="carousel.showNavigationIndicators"
+  [interval]="carousel.interval"
+  [pauseOnFocus]="carousel.pauseOnFocus"
+  [pauseOnHover]="carousel.pauseOnHover"
+  [keyboard]="carousel.keyboard"
+  >
     <ng-template *ngFor="let desktopCover of desktopCovers" ngbSlide>
       <div class="picsum-img-wrapper">
         <img [src]='"../../assets/Covers/Desktop/" + desktopCover' alt="" />

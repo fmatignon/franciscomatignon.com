@@ -12,8 +12,8 @@ export class AboutComponent implements OnInit {
     mobile: boolean = false
     tablet: boolean = false
     desktop: boolean = false
-    resizeObservable$: Observable<Event>
-    resizeSubscription$: Subscription
+    resizeObservable$: Observable<Event>;
+    resizeSubscription$: Subscription;
     // -- MAKE RESPONSIVE END
   
     name: string ="";
@@ -21,9 +21,9 @@ export class AboutComponent implements OnInit {
     subject: string ="";
     message: string ="";
     
-    serviceID ="service_7pvvwqm"
-    templateID ="template_4za1b1j"
-    publicKey ="GnFFybdLoElFXsyEy"
+    serviceID ="service_6zd8eo5"
+    templateID ="template_tqzv5jd"
+    publicKey ="SSUXWtkF4w2I-84ee"
     params ={
       'name': '',
       'email': '',
@@ -37,8 +37,6 @@ export class AboutComponent implements OnInit {
           this.params.email ="";
           this.params.subject = "";
           this.params.message = "";
-          console.log(res);
-          alert("Message sent");
         })
     }
 

@@ -20,7 +20,6 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap'
 import { NgPipesModule } from 'ngx-pipes';
 import { ModalGalleryComponent } from './modal-gallery/modal-gallery.component';
 import { FormsModule } from '@angular/forms';
-import { EmailService } from './email.service';
 
 import { TranslateLoader, TranslateModule  } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
@@ -56,7 +55,7 @@ import { LanguageBarComponent } from './language-bar/language-bar.component';
       }
     })
   ],
-  providers: [EmailService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule {

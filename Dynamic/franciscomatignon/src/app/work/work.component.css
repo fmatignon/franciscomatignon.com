@@ -8,10 +8,14 @@
   overflow:hidden;
   position: relative;
   z-index: 0;
-  width: 100vw;
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
 }
 #hero-wrapper img{
-  width: 100%;
+  max-width: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 #projects-wrapper {
   margin: 12px 12px;
@@ -43,6 +47,9 @@
 #cta button:active {
   background-color: rgba(0, 0, 0, .65);
 }
+ngb-carousel {
+  pointer-events: none;
+}
 
 /* Tablet*/
 @media screen and (min-width: 768px){
@@ -52,17 +59,10 @@
     grid-template-columns: repeat(2,1fr);
     grid-column-gap: 16px;
   }
-  #hero-wrapper {
-  }
 }
 
 /* Desktop*/
 @media screen and (min-width: 1200px){
-  #hero-wrapper {
-  }
-  #hero-wrapper img {
-    width: 100%;
-  }
   #projects-wrapper {
     display: grid;
     grid-template-columns: repeat(3,1fr);
